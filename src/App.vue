@@ -29,7 +29,7 @@ import { RouterLink, RouterView } from 'vue-router'
                       <RouterLink to="/skill" class="nav-link">Skills</RouterLink>  
                     </li>
                     <li class="navbar-list">
-                      <RouterLink to="#" class="nav-link">Experience</RouterLink>  
+                      <RouterLink to="/experience" class="nav-link">Experience</RouterLink>  
                     </li>
                 </ul>
             </div>
@@ -44,5 +44,12 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <style scoped>
+.navbar-brand{
+  color: #D0B6F1;
+}
+.navbar-brand:hover{
+  color: #EFEFEF;
+  transition: 1s ease;
+}
 
 </style>

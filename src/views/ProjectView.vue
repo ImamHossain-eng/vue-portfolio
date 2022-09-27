@@ -1,3 +1,3 @@
 <template>
-    Project Page
+    <h2>Project View</h2>
 </template>
