@@ -28,6 +28,11 @@ const router = createRouter({
       path: '/experience',
       name: 'experience',
       component: () => import('../views/ExperienceView.vue')
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('../views/auth/LoginPage.vue')
     }
 
     // {

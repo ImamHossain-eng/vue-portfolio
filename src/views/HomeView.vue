@@ -21,13 +21,14 @@ export default {
 <template>
   <main>
    <div class="container">
-    <h1 class="text-center bg-info p-2 mt-4">Resume of Imam Hossain</h1>
+    <h1 class="text-center bg-secondary text-light p-2 mt-4">Resume of Imam Hossain</h1>
     <div class="row g-2">
-      <div class="col-4">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus laboriosam unde minus a dolore velit omnis ut sunt adipisci natus error, saepe distinctio temporibus hic magnam corporis, in autem tempore!
+      <div class="col-4 text-center">
+        <img src="images/babu.jpeg" class="w-50">
       </div>
       <div class="col-4">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus laboriosam unde minus a dolore velit omnis ut sunt adipisci natus error, saepe distinctio temporibus hic magnam corporis, in autem tempore!
+        <h3 class="text-dark text-large">Md. Imam Hossain</h3>
+        <h5 class="text-dark text-large">Assistant Officer (IT)</h5>
       </div>
       <div class="col-4">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus laboriosam unde minus a dolore velit omnis ut sunt adipisci natus error, saepe distinctio temporibus hic magnam corporis, in autem tempore!
