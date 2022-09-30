@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
+import auth from './../middleware/auth.js'
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -33,6 +35,14 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: () => import('../views/auth/LoginPage.vue')
+    },
+    {
+      path: '/user',
+      name: 'user-home',
+      component: () => import('../views/user/UserHome.vue'),
+      meta: {
+        middleware: auth,
+      },
     }
 
     // {

@@ -5,11 +5,15 @@ import { RouterLink, RouterView } from "vue-router";
 export default {
   data() {
     return {
-      api: 'http://localhost:8800/api/v1',
+      api: 'http://127.0.0.1:8000/api/v1',
+      auth: {}
     }
   },
   methods: {
-
+    recLog (value) {
+      this.auth = value;
+      this.$router.replace('/user')
+    }
   }
 }
 </script>
@@ -59,7 +63,7 @@ export default {
     </nav>
   </header>
 
-  <RouterView :api="api"/>
+  <RouterView :api="api" @logSuccess="recLog" />
 </template>
 
 <style scoped>

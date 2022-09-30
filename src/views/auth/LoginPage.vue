@@ -8,7 +8,7 @@
         />
       </div>
       <div class="text-center mt-4 name">Twitter</div>
-      <form class="p-3 mt-3" @submit.prevent="submitLogin">
+      <form class="p-3 mt-3" @submit.prevent="submitLogin" method="POST">
         <div class="form-field d-flex align-items-center">
           <span class="fa fa-user"></span>
           <input
@@ -17,6 +17,7 @@
             name="email"
             id="userName"
             placeholder="Username"
+            required
           />
         </div>
         <div class="form-field d-flex align-items-center">
@@ -27,6 +28,7 @@
             name="password"
             id="pwd"
             placeholder="Password"
+            required
           />
         </div>
         <button type="submit" class="btn mt-3">Login</button>
@@ -46,22 +48,29 @@ export default {
     return {
       email: "",
       password: "",
-      api_key: "",
+      access:{}
+
     };
   },
   methods: {
     submitLogin() {
-      axios
-        .post(`${this.api}/login`, {
-          email: this.email,
-          password: this.password,
-        })
+      if(this.email != null && this.password != null){
+        const cred = {email: this.email, password: this.password}
+
+        axios
+        .post(this.api+'/login', cred)
         .then((res) => {
-          console.log(res.data);
+          this.auth = res.data
+          // console.log(this.auth)
+          this.$emit('logSuccess', this.auth)
         })
         .catch((err) => console.log(err));
+      } else {
+        console.log('Please fill all the fields');
+      }
+      
 
-    //   console.log(`Submitted: with ${this.email} and ${this.password} to this link: ${this.api}`)
+    // console.log(`Submitted: with ${this.email} and ${this.password} to this link: ${this.api}`)
     },
   },
 };
